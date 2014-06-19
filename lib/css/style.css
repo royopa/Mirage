@@ -1393,3 +1393,12 @@ table.discovery-filters th.new-filter-header
     text-align: right;
     font-size: 100%;
 }
+
+.hidden {
+  display: none;
+  visibility: hidden;
+} 
+
+.hide {
+  display: none;
+}

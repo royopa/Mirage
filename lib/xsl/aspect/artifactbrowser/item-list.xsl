@@ -233,6 +233,22 @@
                     <xsl:value-of select="util:shortenString($abstract, 220, 10)"/>
                 </div>
             </xsl:if>
+
+            <!-- Link com a citaçao -->
+            <span class="linkCitacao">
+                <xsl:element name="a">
+                    <xsl:attribute name="title">Clique aqui para ver outras formas de citaçao</xsl:attribute>
+                    <xsl:attribute name="class">citacao</xsl:attribute>
+                    <xsl:text>Citar</xsl:text>
+                </xsl:element>
+            </span>
+
+            <div id="dialog" title="Citar" class="hidden">
+                <p>Copy and paste a formatted citation or use one of the links to import into a bibliography manager.</p>
+                <p>MLA Sorrentino, Marcos, et al. &quot;Educação ambiental como política pública.&quot; Educação e Pesquisa, São Paulo 31.2 (2005): 285-299.</p>
+                <p>APA Sorrentino, M., Trajber, R., Mendonça, P., &amp; Ferraro Junior, L. A. (2005). Educação ambiental como política pública. Educação e Pesquisa, São Paulo, 31(2), 285-299.</p>
+            </div>
+
         </div>
     </xsl:template>
 

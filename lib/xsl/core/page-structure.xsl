@@ -692,7 +692,15 @@
                 select="$localJQuerySrc"/><xsl:text disable-output-escaping="yes">"&gt;&#160;&lt;\/script&gt;')</xsl:text>
         </script>
 
-
+        <!-- função para abrir dialog da citation -->
+        <script type="text/javascript">
+        $(function() {
+            $('.citacao').click(function() {
+                $('#dialog').hide().removeClass('hidden');
+                $('#dialog' ).dialog();
+            });
+        }); 
+        </script>
 
         <!-- Add theme javascipt  -->
         <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='javascript'][@qualifier='url']">
