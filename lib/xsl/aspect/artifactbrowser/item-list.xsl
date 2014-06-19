@@ -238,16 +238,42 @@
             <span class="linkCitacao">
                 <xsl:element name="a">
                     <xsl:attribute name="title">Clique aqui para ver outras formas de citaçao</xsl:attribute>
-                    <xsl:attribute name="class">citacao</xsl:attribute>
+                    <xsl:attribute name="onClick">
+                        showDialogCitation('<xsl:value-of select="translate($href,'/','_')"/>')
+                    </xsl:attribute>
                     <xsl:text>Citar</xsl:text>
                 </xsl:element>
             </span>
 
-            <div id="dialog" title="Citar" class="hidden">
-                <p>Copy and paste a formatted citation or use one of the links to import into a bibliography manager.</p>
-                <p>MLA Sorrentino, Marcos, et al. &quot;Educação ambiental como política pública.&quot; Educação e Pesquisa, São Paulo 31.2 (2005): 285-299.</p>
-                <p>APA Sorrentino, M., Trajber, R., Mendonça, P., &amp; Ferraro Junior, L. A. (2005). Educação ambiental como política pública. Educação e Pesquisa, São Paulo, 31(2), 285-299.</p>
-            </div>
+            <xsl:element name="div">
+                <xsl:attribute name="title">
+                    <xsl:text>Citar</xsl:text>
+                </xsl:attribute>
+                <xsl:attribute name="class">
+                    <xsl:text>hidden</xsl:text>
+                </xsl:attribute>
+                <xsl:attribute name="id">
+                    <xsl:text>dialog_</xsl:text>
+                    <xsl:value-of select="translate($href,'/','_')"/>
+                </xsl:attribute>
+                <p>Copie e cole uma citação formatada ou use um dos links para importar para um gerenciador de bibliografias.</p>
+                <p>
+                    <span class="bold">MLA</span>
+                    Hobsbawm, Eric J. A era das revoluções. Vol. 4. Paz e terra, 2006.
+                </p>
+                <p>
+                    <span class="bold">NBR 6023</span>
+                    HOBSBAWM, Eric J. A era das revoluções. Paz e terra, 2006.
+                </p>
+                <p>
+                    <span class="bold">APA</span>
+                    Hobsbawm, E. J. (2006). A era das revoluções (Vol. 4). Paz e terra.
+                </p>
+                <p>
+                    <xsl:value-of
+                            select="translate($href,'/','_')"/>
+                </p>
+            </xsl:element>
 
         </div>
     </xsl:template>

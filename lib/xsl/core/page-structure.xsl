@@ -694,12 +694,18 @@
 
         <!-- função para abrir dialog da citation -->
         <script type="text/javascript">
-        $(function() {
-            $('.citacao').click(function() {
-                $('#dialog').hide().removeClass('hidden');
-                $('#dialog' ).dialog();
+        function showDialogCitation(idDialog) {
+            //deixa o dialog visível/remove a classe hidden do elemento
+            $('#dialog_'+idDialog).hide().removeClass('hidden');
+
+            $('#dialog_'+idDialog)
+                .dialog({
+                    minWidth: 600,
+                    minHeigth: 600,
+                    title: 'Citar',
             });
-        }); 
+            $dialog.dialog('open');
+        }
         </script>
 
         <!-- Add theme javascipt  -->
