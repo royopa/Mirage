@@ -11,15 +11,23 @@
  * Primary Styles
  */
 
+body {
+    background: url('../../images/bg.png') repeat;
+    font: 14px/18px 'arial', 'helvetica', 'clean', 'sans-serif';
+}
+
 /*Font size percentages based on the tables at developer.yahoo.com/yui/fonts/ */
 h1 {
-    font-size: 182%;
-    color: #1F3F5E;
-    text-align: justify;
+    font-size: 24px;
+    line-height: 30px;
+    color: #555;
+    text-align: left;
+    text-shadow: #fff 0px 1px 0;
 }
 
 h2{
     font-size: 123.1%;
+    color: #000;
 }
 
 h3 {
@@ -34,6 +42,10 @@ h5, h6 {
     font-size: 100%;
 }
 
+a img {
+    border: 0;
+}
+
 /*fix for firefox in os x, where selects get the incorrect
 height if it's not explicitly set this shouldn't be noticeable in
 other browsers*/
@@ -46,9 +58,33 @@ select.multiple {
 }
 
 #ds-header-wrapper {
-    background-color: #1F3F5E;
+    background-color: #cc0000;
     color: white;
-    min-width: 950px;
+    height: 40px;
+    min-width: 1024px;
+    z-index: 1000;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+}
+
+#ds-header-wrapper img {
+    margin: 5px 0 0 0;
+    height: 30px;
+    width: auto;
+}
+
+#uhl-header {
+    position: relative;
+    margin: 15px auto 0px;
+    padding: 0;
+    width: 980px;
+    height: 100px;
+}
+
+#uhl-header img {
+    width: auto;
+    height: 100px;
 }
 
 #ds-header-logo-link {
@@ -78,54 +114,83 @@ select.multiple {
 
 #ds-user-box {
     right: 0;
-    top: 17px;
+    top: 10px;
     position: absolute;
     color: white;
 }
 
-#ds-language-selection {
-    right: 0;
-    top: 40px;
-    position: absolute;
-    color: white;
-}
-
-#ds-user-box a, #ds-language-selection a {
+#ds-user-box a{
     color: white;
 }
 
 #ds-trail-wrapper {
-    background-color: #b6c8d9;
-    margin: 0;
+    position: relative;
+    min-height: 20px;
+    margin: 0px auto 0;
+    width: 980px;
     padding: 0;
-    border-top: 1px solid #9cacba;
-    border-bottom: 1px solid #9cacba;
-    min-width: 950px;
 }
 
 #ds-trail {
     list-style: none;
-    line-height: 138.5%;
+    line-height: 25px;
     margin: 0;
-    padding: 3px 0;
+    padding: 0;
 }
 
 #ds-trail li {
+    position: relative;
     display: inline;
-    color: #1F3F5E;
+    font: 12px/30px 'TeXGyreAdventorRegular', 'arial', 'helvetica', 'clean', 'sans-serif';
     margin-right: 5px;
+    text-transform: none;
 }
 
 #ds-trail a {
-    color: #1F3F5E;
+    color: #cc0000;
+    text-transform: none;
+    text-decoration: none;
 }
 
+#ds-trail .ds-trail-link.last-link, #ds-trail .ds-trail-link.last-link a{
+    color: #555;
+    font: 12px/30px 'TeXGyreAdventorBold', 'arial', 'helvetica', 'clean', 'sans-serif';
+}
+
+#file_news_div_news {
+    margin: 0;
+}
+
+#uhl-banner-news {
+    padding: 0;
+    margin: 0;
+    margin-left: -30px;
+    margin-top: -30px;
+    width: 715px;
+    height: 175px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background: url('../../images/uhl-banner.png') 0 -30px no-repeat;
+}
+
+#uhl-banner-news p {
+    text-indent: -2000px;
+    display: none;
+}
+
+#uhl-front-content {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+
 #no-js-warning,
-#ds-trail,
 #ds-header,
-#ds-footer,
 #ds-content {
-    width: 950px;
+    width: 980px;
     margin: auto;
     position: relative;
 }
@@ -152,42 +217,190 @@ select.multiple {
 }
 
 #ds-footer {
-    border-top: 1px solid #9CACBA;
-    padding-top: 10px;
-    font-size: 93%;
-    line-height: 1.6em;
+    position: relative;
+    font: 11px/16px 'SourceSansProRegular', 'arial', 'helvetica', 'clean', 'sans-serif';
+    margin: 20px auto 0;
+    width: 100%;
+    height:110px;  
+    background: #cc0000;
+    background:url('../img/footer-bg.png') 0 0px;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#df0215), to(#ae010d));
+    background-image: -webkit-linear-gradient(top, #df0215, #ae010d);
+    background-image: -moz-linear-gradient(top, #df0215, #ae010d);
+    background-image: -ms-linear-gradient(top, #df0215, #ae010d);
+    background-image: -o-linear-gradient(top, #df0215, #ae010d);
+    background-image: linear-gradient(top, #df0215, #ae010d);
+    bottom: 0px;
+    min-width: 1024px;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
 }
 
-#ds-footer-left {
-    float: left;
+#ds-footer #content {
+    position: relative;
+    margin: 0 auto;
+    height:120px;
+    width: 980px;
 }
 
-#ds-footer-right {
-    float:right;
-}
-
-#ds-footer-right span.theme-by{
-    display: inline-block;
-    vertical-align: top;
-}
-
-#ds-footer-logo-link {
-    text-decoration:none;
-    line-height: 40px;
-    cursor: pointer;
-}
-
-#ds-footer-logo {
-    display: inline-block;
-    background: url('../../images/@mirelogo-small.png');
-    background-repeat: no-repeat;
-    width: 79px;
+#ds-footer #links{
+    width: 615px;
+    height: 100px;
+    float: right;
+    color: #fff;
+    overflow: hidden;
+    padding: 8px 0 0 0;
+    text-align: right;
+    }
+    
+#ds-footer #address{
+    margin: 7px 0 0;
     height: 40px;
-}
+}   
 
-#ds-footer-links {
-    clear: left;
-}
+#ds-footer #links p{
+    display: inline;
+    margin: 5px 0 0 0;
+    padding: 0 10px 0 0px;
+}   
+    
+#ds-footer #links ul{
+    margin: 0px 0;
+    font: 14px/26px 'SourceSansProRegular', 'arial', 'helvetica', 'clean', 'sans-serif';
+    list-style-type: none;
+    padding: 0 0;
+    display: inline;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    }
+    
+#ds-footer #links ul li {
+    margin: 10px 0 0 0;
+    display: inline;
+    padding: 0 10px;
+    border-left: #fff 1px solid;
+    }
+
+#ds-footer #links ul li a{  
+    text-decoration: none;
+    color: #fff;
+    }
+
+#ds-footer #links ul li.first{
+    border:none;
+    }
+
+
+ #ds-footer #uhl-logo{
+    position: absolute;
+    display: inline;
+    height: 65px;
+    width: 165px;
+    top: 16px;
+    left: 50px;
+    /*z-index:300;*/
+    }
+    
+ #ds-footer #uhl-logo img{
+    width: auto;
+    height: 80px;
+    }
+ 
+   #uhds-links{
+    position: absolute;
+    top: 25px;
+    right: 110px;
+    }
+ 
+ #uh-links{
+    position: absolute;
+    top: 65px;
+    right: 0;
+    }
+ 
+#uh-links ul li{
+    font: 12px/26px 'SourceSansProRegular', 'arial', 'helvetica', 'clean', 'sans-serif';
+ }
+
+ 
+#uhl-address {
+    color: #fff;
+    text-shadow: none;
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    }
+
+#uhl-address a{
+    color: #fff;
+    }
+
+#ds-footer #social {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    padding: 3px 0;
+    margin-left: 10px;
+    }
+
+#twitter{
+    margin-right: 10px;
+    float: left;
+    height: 26px;
+    width: 26px;
+    background: url('../../images/twitter-duo.png') no-repeat 0 0px;
+     transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    opacity: 0.8;
+    filter:alpha(opacity=80); /* For IE8 and earlier */
+    }
+    
+#twitter:hover {
+    background: url('../../images/twitter-duo.png') no-repeat 0 0;
+    opacity: 1.0;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+    }
+
+#facebook{
+margin-right: 10px;
+    float: left;
+    height: 26px;
+    width: 26px;
+    background: url('../../images/facebook-duo.png') no-repeat 0 0px;
+     transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    opacity: 0.8;
+    filter:alpha(opacity=80); /* For IE8 and earlier */
+    }
+    
+#facebook:hover {
+    background: url('../../images/facebook-duo.png') no-repeat 0 0;
+    opacity: 1.0;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+    }
+    
+#youtube{
+margin-right: 10px;
+    float: left;
+    height: 26px;
+    width: 26px;
+    background: url('../../images/youtube-duo.png') no-repeat 0 0px;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    opacity: 0.8;
+    filter:alpha(opacity=80); /* For IE8 and earlier */
+    }
+    
+#youtube:hover {
+    background: url('../../images/youtube-duo.png') no-repeat 0 0;
+    opacity:1.0;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+    }
+
 
 .ie6 #ds-footer-links {
     display: inline;
@@ -202,8 +415,19 @@ select.multiple {
 
 #ds-body {
     float: left;
-    width: 675px;
-    padding-top: 10px;
+    background: #fff;
+    border: 1px #aaa solid;
+    width: 655px;
+    height: auto;
+    min-height: 467px;
+    margin: 10px auto 30px;
+    padding: 30px 30px 30px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    
 }
 
 #ds-options-wrapper {
@@ -214,6 +438,31 @@ select.multiple {
 
 #ds-options {
     padding: 0;
+}
+
+h1.ds-div-head {
+    text-transform: uppercase;
+    font-family: 'TeXGyreAdventorRegular', 'arial', 'helvetica', 'clean', 'sans-serif';
+    width: 675px;
+    position: relative;
+    left: -31px;
+    top: -31px;
+    padding: 20px 10px 20px 30px;
+    color: #555;
+    text-shadow: #fff 0px 1px 0;
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    z-index: 20;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #f5f5f5;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(top, #ffffff, #e6e6e6);
 }
 
 h1.ds-option-set-head {
@@ -229,37 +478,43 @@ h1.ds-option-set-head {
     margin-top: 0;
 }
 
-div.ds-option-set {
-    border: 1px solid #d8e8eb;
-    border-top: none;
-}
 
 div.ds-option-set ul {
     list-style: none;
-    margin-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin: 0;
+    padding: 0;
 }
+
+div.ds-option-set ul li{
+    margin-bottom: 5px;
+}
+
 
 div.ds-option-set .ds-sublist-head {
     font-weight: normal;
-    font-size: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1.2em;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 10px;
 }
 
 div.ds-option-set ul.sublist {
-    margin-left: 20px;
+    margin-left: 10px;
     padding-top: 0;
     padding-bottom: 0;
+    margin-bottom: 20px;
 }
 
-div#ds-feed-option li
-{
-    padding-top: 4px;
+
+
+div.ds-option-set ul.sublist li{
+    margin-bottom: 5px;
 }
 
-div#ds-feed-option a
-{
-    padding: 0px 0px 2px 20px;
+
+ul#aspect_viewArtifacts_Navigation_list_account.ds-simple-list.nav-container li, ul#aspect_viewArtifacts_Navigation_list_context.ds-simple-list.nav-container li{
+    margin-bottom: 5px;
 }
 
 #ds-search-option {
@@ -271,11 +526,12 @@ div#ds-feed-option a
 }
 
 #ds-search-form input.ds-text-field{
-    width: 169px;
+    width: 160px;
 }
 
 #ds-search-form input.ds-button-field {
     margin-left: 6px;
+    margin-left: 5px;
 }
 
 #ds-search-form input.ds-text-field,
@@ -296,6 +552,7 @@ p {
 .primary {
     margin-top: 10px;
     margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 ol {
@@ -306,24 +563,27 @@ ol {
 th,
 td {
     padding: 5px;
-    vertical-align: middle;
+    vertical-align: left;
 }
 
 .ds-button-field,
 #aspect_eperson_StartRegistration_list_registration-progress li {
-    background-color: #6d859c;
-    border: 1px solid #1F3F5E;
-    padding: 2px 5px;
-    color: #FFFFFF;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.ds-button-field[disabled="disabled"],
-.ds-button-field.disabled,
-li.button.disabled input {
-    opacity: 0.35;
-    cursor: auto;
+    font: 12px/20px 'SourceSansProRegular', 'arial', 'helvetica', 'clean', 'sans-serif';
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    color: #fff;
+    border: none;
+    padding: 3px 10px 0px 10px;
+    background: #cc0000;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#df0215), to(#ae010d));
+    background-image: -webkit-linear-gradient(top, #df0215, #ae010d);
+    background-image: -moz-linear-gradient(top, #df0215, #ae010d);
+    background-image: -ms-linear-gradient(top, #df0215, #ae010d);
+    background-image: -o-linear-gradient(top, #df0215, #ae010d);
+    background-image: linear-gradient(top, #df0215, #ae010d);
+    border-radius: 3px;
+    box-shadow: 0px 0px 1px #555;
+    -moz-box-shadow: 0px 0px 1px #555;
+    -webkit-box-shadow: 0px 0px 1px #555;
 }
 
 #aspect_eperson_StartRegistration_list_registration-progress li {
@@ -378,8 +638,15 @@ ul.ds-progress-list li.button input.ds-button-field {
 
 ul.ds-progress-list li.current input.ds-button-field,
 #aspect_eperson_StartRegistration_list_registration-progress li.current {
-    background-color: #499c73;
-    border: 1px solid #1f5e3f;
+    border: 1px solid #006699;
+    border-top: 1px solid #00ccff;
+    background: #3399ff;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3399ff), to(#0066cc));
+    background-image: -webkit-linear-gradient(top, #3399ff, #0066cc);
+    background-image: -moz-linear-gradient(top, #3399ff, #0066cc);
+    background-image: -ms-linear-gradient(top, #3399ff, #0066cc);
+    background-image: -o-linear-gradient(top, #3399ff, #0066cc);
+    background-image: linear-gradient(top, #3399ff, #0066cc);
 }
 
 ul.ds-progress-list li.disabled input.ds-button-field
@@ -388,17 +655,6 @@ ul.ds-progress-list li.disabled input.ds-button-field
     border: 1px solid #D8E8EB;
     color: #444444;
     cursor: default;
-}
-
-.ie6 .disabled,
-.ie6 li.disabled input,
-.ie7 .ds-button-field.disabled,
-.ie7 li.button.disabled input,
-.ie8 .ds-button-field.disabled,
-.ie8 li.button.disabled input {
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 50);
-    zoom: 1;
-    cursor: auto;
 }
 
 
@@ -443,7 +699,8 @@ input.ds-password-field {
 .submission .ds-form-list input.ds-text-field,
 .administrative .ds-form-list input.ds-text-field,
 textarea.ds-textarea-field {
-    width: 500px;
+    width: 623px;
+    max-width: 623px;
 }
 
 table textarea.ds-textarea-field {
@@ -515,7 +772,7 @@ input.ds-password-field.error {
 .ds-form-list legend{
     font-size: 182%;
     margin-bottom: 15px;
-    color: #1F3F5E;
+    color: #000;
 }
 
 .ds-form-item legend {
@@ -542,7 +799,8 @@ li.ds-form-item.last {
 
 li.ds-form-item .ds-form-label{
     font-weight: bold;
-    font-size: 123.1%;
+    font-size: 110%;
+    color: #000;
 }
 
 li.ds-form-item label.ds-composite-component{
@@ -581,10 +839,6 @@ li.ds-form-item label.ds-composite-component.last{
     font-size: 93%;
 }
 
-select#aspect_submission_submit_SelectCollectionStep_field_handle {
-    max-width: 350px;
-}
-
 #aspect_submission_StepTransformer_field_dc_date_issued_year,
 #aspect_submission_StepTransformer_field_dc_date_issued_day {
     width: 50px;
@@ -607,6 +861,7 @@ span.field-help {
 .ds-checkbox-field input,
 .ds-radio-field input {
     margin-left: 0;
+    font-size: 20px;
 }
 
 .ds-checkbox-field label,
@@ -633,21 +888,6 @@ span.field-help {
     padding: 10px;
 }
 
-#aspect_submission_Submissions_div_submissions table,
-#aspect_submission_Submissions_div_submissions table tr,
-#aspect_submission_Submissions_div_submissions table td,
-#aspect_submission_Submissions_div_submissions table th {
-    background-color: #FFFFFF;
-    border: 1px solid #9CACBA;
-}
-
-#aspect_submission_Submissions_div_submissions table tr.ds-table-header-row, 
-#aspect_submission_Submissions_div_submissions table tr.ds-table-header-row th {
-    background-color: #B6C8D9;
-    border: 1px solid #9CACBA;
-    
-}
-
 .submission .ds-form-sublist li.ds-form-item {
     margin-bottom: 5px;
 }
@@ -660,7 +900,7 @@ span.field-help {
 .administrative.tabbed ul.horizontal {
     list-style: none;
     margin: 15px 0 0;
-    border-bottom: 1px solid #9cacba;
+    border-bottom: 1px solid #d0d0d0;
 }
 
 .administrative.tabbed ul.horizontal li{
@@ -687,7 +927,7 @@ span.field-help {
     padding: 10px;
     clear: both;
     background-color: #fafafa;
-    border: 1px solid #9cacba;
+    border: 1px solid #d0d0d0;
     margin-bottom: 25px;
     margin-top: 0;
 }
@@ -780,6 +1020,7 @@ span.field-help {
 
 .artifact-title {
     font-size: 123.1%;
+    line-height: 140%;
 }
 
 .result-query,
@@ -794,11 +1035,19 @@ span.field-help {
 ul.alphabet {
     list-style: none;
     margin: 0;
+    margin-bottom: 20px;
 }
 
 ul.alphabet li {
-    display:inline;
+    display:inline-block;
+    padding-right: 0px;
+    min-width: 20px;
+    text-align: center;
 }
+
+ul.alphabet li a {
+    text-align: center;
+    }
 
 #aspect_eperson_PasswordLogin_list_password-login .ds-form-item {
     float: left;
@@ -823,73 +1072,54 @@ td select.ds-select-field {
     margin-left: 5px;
 }
 
-form.search,
-div.discoverySearchBox
-{
+form.search {
     background-color: #fafafa;
     border: 1px solid #ebebeb;
     padding: 10px;
     margin-bottom: 15px;
 }
 
-form.search label,
-div.discoverySearchBox label
-{
+form.search label {
     font-weight: bold;
 }
 
-form.search p.ds-paragraph.button-list,
-div.discoverySearchBox p.ds-paragraph.button-list
-{
+form.search p.ds-paragraph.button-list {
     text-align: center;
     margin: 0;
-}
+    text-align: right;
+    margin: 0 20px 10px 0;
+    }
 
-form.search fieldset,
-div.discoverySearchBox fieldset {
+form.search fieldset {
     margin: 0;
 }
 
-form.search .ds-form-item,
-div.discoverySearchBox .ds-form-item
-{
+form.search .ds-form-item {
     margin: 0;
     padding-bottom: 5px;
 }
 
-form.search .ds-form-item select,
-div.discoverySearchBox .ds-form-item select
-{
+form.search .ds-form-item select{
     margin-top: 0;
 }
 
-form.search label.ds-composite-component .ds-select-field,
-div.discoverySearchBox label.ds-composite-component .ds-select-field
-{
+form.search label.ds-composite-component .ds-select-field{
     margin-top: 6px;
 }
 
-form.search .ds-form-item label,
-div.discoverySearchBox .ds-form-item label
-{
+form.search .ds-form-item label {
     font-size: 100%;
 }
 
-form.search .ds-form-content,
-div.discoverySearchBox .ds-form-content
-{
+form.search .ds-form-content {
     display: inline;
 }
 
-form.search table input.ds-text-field,
-div.discoverySearchBox table input.ds-text-field
-{
+form.search table input.ds-text-field {
    margin: 0;
 }
 
-form.search .field-help,
-div.discoverySearchBox .field-help
-{
+form.search .field-help {
     margin: 3px 0;
 }
 
@@ -912,19 +1142,14 @@ div.discoverySearchBox .field-help
 #aspect_administrative_registries_FormatRegistryMain_table_bitstream-format-registry,
 #aspect_submission_Submissions_table_unfinished-submissions,
 #aspect_submission_Submissions_table_submissions-inprogress,
-#aspect_submission_Submissions_table_completed-submissions,
 table.detailtable {
     margin-top: 10px;
     margin-bottom: 10px;
     border-collapse: collapse;
 }
 
-#aspect_administrative_registries_EditMetadataSchema_table_metadata-schema-edit-existing-fields tr,
-#aspect_administrative_registries_MetadataRegistryMain_table_metadata-registry-main-table tr,
+
 #aspect_administrative_registries_FormatRegistryMain_table_bitstream-format-registry tr,
-#aspect_submission_Submissions_table_unfinished-submissions tr,
-#aspect_submission_Submissions_table_submissions-inprogress tr,
-#aspect_submission_Submissions_table_completed-submissions tr,
 table.detailtable tr {
     line-height: 1.6em;
     border: 1px solid #ebebeb;
@@ -935,7 +1160,6 @@ table.detailtable tr {
 #aspect_administrative_registries_FormatRegistryMain_table_bitstream-format-registry tr.even,
 #aspect_submission_Submissions_table_unfinished-submissions tr.even,
 #aspect_submission_Submissions_table_submissions-inprogress tr.even,
-#aspect_submission_Submissions_table_completed-submissions tr.even,
 table.detailtable tr.even {
     background-color: #fafafa;
 }
@@ -945,7 +1169,6 @@ table.detailtable tr.even {
 #aspect_administrative_registries_FormatRegistryMain_table_bitstream-format-registry td,
 #aspect_submission_Submissions_table_unfinished-submissions td,
 #aspect_submission_Submissions_table_submissions-inprogress td,
-#aspect_submission_Submissions_table_completed-submissions td,
 table.detailtable td {
     padding: 5px 10px;
     text-align: justify;
@@ -957,11 +1180,14 @@ table.detailtable td {
 #aspect_administrative_registries_MetadataRegistryMain_table_metadata-registry-main-table tr.ds-table-header-row,
 #aspect_administrative_registries_FormatRegistryMain_table_bitstream-format-registry tr.ds-table-header-row,
 #aspect_submission_Submissions_table_unfinished-submissions tr.ds-table-header-row,
-#aspect_submission_Submissions_table_submissions-inprogress tr.ds-table-header-row,
-#aspect_submission_Submissions_table_completed-submissions tr.ds-table-header-row {
+#aspect_submission_Submissions_table_submissions-inprogress tr.ds-table-header-row {
     border: none;
 }
 
+
+.ds-table {
+    width: 100%;
+}
 
 table.detailtable td.label-cell {
     font-weight: bold;
@@ -969,23 +1195,19 @@ table.detailtable td.label-cell {
     width: 100px;
 }
 
-div.item-summary-view-metadata h1,
-div.item-summary-view-metadata h2 {
-    line-height: normal;
-}
-
 div.item-summary-view-metadata {
-    text-align: justify;
-    line-height: 161.6%;
+    text-align: left;
+    line-height: 150%;
     margin-bottom: 30px;
 }
 
 div.simple-item-view-authors {
     font-size: 123.1%;
     font-weight: bold;
-    border-bottom:1px solid #D8E8EB;
+    border-bottom:1px solid #ccc;
     padding-bottom: 2px;
     margin-bottom: 20px;
+    margin-top: 10px;
     text-align: justify;
 }
 
@@ -1001,12 +1223,13 @@ div.simple-item-view-description {
 
 #aspect_artifactbrowser_ItemViewer_div_item-view h2,
 div.simple-item-view-description h3{
-    border-bottom:1px solid #D8E8EB;
+    border-bottom:1px solid #ccc;
     margin-bottom: 3px;
 }
 
 #aspect_artifactbrowser_ItemViewer_div_item-view h2 {
     margin-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 div.spacer{
@@ -1073,12 +1296,20 @@ div.spacer{
 #aspect_artifactbrowser_CommunityViewer_div_community-home h2,
 #aspect_artifactbrowser_CollectionViewer_div_collection-home h2 {
     margin-top: 30px;
-    border-bottom:1px solid #D8E8EB;
+    text-decoration: underline;
     margin-bottom: 3px;
+    margin-bottom: 10px;
 }
 
 .ds-logo-wrapper {
     display: block;
+    width: 655px;
+    position: relative;
+}
+
+.ds-logo-wrapper img.logo {
+    max-width: 100%;
+    height: auto;
 }
 
 #aspect_administrative_item_FindItemForm_list_find-item-form .ds-form-item {
@@ -1095,310 +1326,367 @@ div.spacer{
     text-align: center;
 }
 
-form.discover-search-box{
+.nav-head {
+    position: relative;
+    display: block;
+    height: 28px;
+    padding: 6px 20px 5px;
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    z-index: 20;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #f5f5f5;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(top, #ffffff, #e6e6e6);
+}
+
+.nav-head .internal-titlebar {
+    position: relative;
+    width: auto;
+    height: 28px;
+    font: 14px/28px 'TeXGyreAdventorBold', 'arial', 'helvetica', 'clean', 'sans-serif';
+    text-transform: uppercase;
+    float: left;
+    color: #555;
+    text-shadow: #fff 0px 1px 0;
+}
+
+.nav-container {
+    position: relative;
+    background: #fff;
+    border: 1px #aaa solid;
+    height: auto;
+    overflow: auto;
+    margin: 0 auto;
     margin-bottom: 10px;
+    padding: 20px 30px 20px;
+    -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-top: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
-
-form.discover-sort-box select{
-    margin: 0 4px;
-}
-
-.hidden {
-    display:none;
-    visibility:hidden;
-}
-
-.icon-button{
-    padding:4px;
-    cursor: pointer;
-    margin: 2px;
-    background-color: #6D859C;
-    border: 1px solid #1F3F5E;
-    text-indent: -1000px;
-    width: 30px;
-    height: 30px;
-    display:block;
-    /*Required for IE*/
-    font-size: 0;
-    line-height: 0;
-}
-
-.icon-button.arrowUp{
-    background-image: url(../../images/arrow_up_ffffff_16x16.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.icon-button.arrowDown{
-    background-image: url(../../images/arrow_down_ffffff_16x16.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-/* FOR CC License */
-span.floatleft {
-	border:none;
-	float:right;
-	display:inline;
-}
-
-/* FOR CC PAGE to GROUP ITEMS horizontally */
-ul.horizontal li span.bold a { color: black; }
-
-/* group items horizontally in a list */
-
-ul.horizontalVanilla
-{
-font-weight: bold;
-list-style-type: none;
-padding: 0px;
-padding-left: 0px;
-padding-bottom: 15px;
-border-left: 1px solid white;
-border-right: 1px solid white;
-margin: 10px -1px 5px -1px;
-width: inherit;
-}
-
-ul.horizontalVanilla li
-{
-float: left;
-height: 100%;
-background-color: rgb(255, 255, 255);
-margin: 2px 2px 0px 2px;
-/* border: 1px solid rgb(240, 240, 210); */
-}
-
-/* Controlled vocabulary support css START*/
-ul.vocabulary {
-    margin-left: 0;
-}
-
-ul.vocabulary,
-ul.vocabulary ul,
-ul.vocabulary li
-{
+ul.nav-container {
     list-style: none;
 }
 
-ul.vocabulary div.vocabulary-node-icon{
-    cursor: pointer;
-    width: 15px;
-    height: 12px;
-    display: inline-block;
+table#aspect_administrative_registries_MetadataRegistryMain_table_metadata-registry-main-table.ds-table {
+    width: 655px;
+    margin-bottom: 20px;
 }
 
-ul.vocabulary div.vocabulary-node-icon.vocabulary-doc{
-    background-image: url(../../images/controlledvocabulary/voc_doc_222222.png);
+h2.ds-table-head, h2.ds-head {
+    margin: 20px 0 10px;
 }
 
-ul.vocabulary div.vocabulary-node-icon.vocabulary-open{
-    background-image: url(../../images/controlledvocabulary/voc_open_222222.png);
-}
-
-ul.vocabulary div.vocabulary-node-icon.vocabulary-closed{
-    background-image: url(../../images/controlledvocabulary/voc_closed_222222.png);
-    background-repeat: no-repeat;
-}
-
-div.vocabulary-container li.error{
-    color: #c22121;
-}
-/* Controlled vocabulary support css END*/
-
-#aspect_administrative_authorization_EditPolicyForm_field_start_date{
-    width: 100px;
-}
-#aspect_administrative_authorization_EditPolicyForm_field_end_date{
-    width: 100px;
-}
-#aspect_administrative_authorization_EditItemPolicies_table_policies-confirm-delete tr,
-#aspect_administrative_authorization_EditItemPolicies_table_policies-confirm-delete td
-{
-    border: 1px solid lightgray;
-}
-
-
-#aspect_administrative_authorization_AdvacedAuthorizationsForm_field_end_date{
-    width: 100px;
-}
-#aspect_administrative_authorization_AdvacedAuthorizationsForm_field_start_date{
-    width: 100px;
-}
-#aspect_submission_StepTransformer_field_embargo_until_date{
-    width: 100px;
-}
-
-#aspect_administrative_item_AddBitstreamForm_field_embargo_until_date{
-    width: 100px;
-}
-
-#aspect_administrative_item_EditBitstreamForm_field_embargo_until_date{
-    width: 100px;
-}
-
-#aspect_submission_StepTransformer_table_policies tr,
-#aspect_submission_StepTransformer_table_policies td
-{
-    border: 1px solid lightgray;
-}
-
-table.detailtable {
-    background-color: #D8E8EB;
-}
-
-table.detailtable th{
-    background-color: #F0F2F5;
-    word-wrap: normal;
-}
-
-table.detailtable td{
-    background-color: #FFFFFF;
-    text-align: right;
-}
-
-
-span.highlight{
+fieldset#aspect_artifactbrowser_AdvancedSearch_list_search-query.ds-form-list label {
+    font-size: 1.2em;
     font-weight: bold;
+    line-height: 1.8em;
+    border-bottom: 1px solid #aaa;
 }
 
-div.gear-icon{
-    background-image: url('../../images/gear_6D859C_25x25.png');
+select#aspect_artifactbrowser_AdvancedSearch_field_scope.ds-select-field{
+    margin-left: 10px;
 }
 
-ul.gear-selection li.gear-option-selected{
-    background: url('../../images/check_606060_15x15.png') no-repeat 3px center;
-}
-
-input#aspect_discovery_SimpleSearch_field_query{
-    width: 565px;
-}
-
-input.search-icon{
-    background-image: url('../../images/search_icon_ffffff_20x20.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    text-indent: -1000px;
-        /*Css props below are required for IE*/
-    font-size: 0;
-    display:block;
-    line-height: 0;
-}
-
-div#aspect_discovery_SimpleSearch_div_search p.pagination-info{
-    display: none;
-}
-
-div#aspect_discovery_SimpleSearch_div_search .pagination-links{
-    float: left;
-}
-
-table.discovery-filters{
-    width: 100%;
-    background-color: #FFFFFF;
-}
-
-table.discovery-filters tr{
-    border-top: 1px solid #EBEBEB;
-}
-table.discovery-filters td{
-    padding: 0;
-}
-
-table.discovery-filters td.selection{
-    width: 1%;
-}
-
-table.discovery-filters th.new-filter-header{
-    text-align: left;
-    padding-top: 20px;
-}
-
-
-table.discovery-filters td.discovery-filter-input-cell {
-    padding-left: 3px;
-}
-
-
-table.discovery-filters tr.apply-filter{
-    background-color: #FAFAFA;
-}
-
-table.discovery-filters tr.apply-filter input{
-    width: 65px;
-    height: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 108%;
-    display: block;
+fieldset#aspect_artifactbrowser_AdvancedSearch_list_search-query.ds-form-list span.field-help {
+    margin-left: 10px;
     margin-top: 10px;
 }
 
-
-table.discovery-filters td.filter-controls{
-    width: 50px;
+fieldset#aspect_artifactbrowser_AdvancedSearch_list_search-query.ds-form-list {
+    margin: 10px 20px 10px;
+    width: 595px;
 }
 
-table.discovery-filters input.filter-control {
-    margin-left: 5px;
-    text-indent: -1000px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 17px;
-    width: 17px;
-    float: left;
+table#aspect_artifactbrowser_AdvancedSearch_table_search-query.ds-table {
+    margin: 20px 20px 20px;
+    width: 595px;
+    border: 1px #d0d0d0 solid;
+    background: #fff;
+    height: auto;
+}
+
+ table#aspect_artifactbrowser_AdvancedSearch_table_search-query.ds-table tr:last-child{
+    
+}
+
+table#aspect_artifactbrowser_AdvancedSearch_table_search-query.ds-table th {
+    text-align: left;
+    border-bottom: 1px #d0d0d0 solid;
+    color: #000;
+}
+
+th.ds-table-header-cell.odd, th.ds-table-header-cell.even{
+    padding-left: 10px;
+}
+
+table#aspect_artifactbrowser_AdvancedSearch_table_search-controls.ds-table {
+    margin: 20px auto 20px;
+    width: 595px;
+}
+
+table#aspect_artifactbrowser_AdvancedSearch_table_search-controls.ds-table tbody  {
+    text-align: center;
+    border: 1px #d0d0d0 solid;
+    background: #fff;
+}
+
+div#ds-search-option.ds-option-set.nav-container {
+    padding-bottom: 20px;
+}
+
+div#ds-search-option.ds-option-set.nav-container label {
+    margin-left: 20px;
+    font-size: 85%;
+}
+
+input#ds-search-form-scope-container, input#ds-search-form-scope-all{
+    margin: 0 5px 0px 0;
+}
+
+div#ds-search-option.ds-option-set.nav-container a {
+    margin: 0px 10px 0;
+    font-weight: bold;
+    float: right;
+}
+
+tr.ds-table-row.even {
+    background: #f8f8f8;
+    border-bottom: 1px solid #ebebeb;
+}
+
+tr.ds-table-row.odd {
+    border-bottom: 1px solid #ebebeb;
+}
+
+table#aspect_artifactbrowser_ConfigurableBrowse_table_browse-by-subject-results.ds-table th.ds-table-header-cell,
+table#aspect_artifactbrowser_ConfigurableBrowse_table_browse-by-author-results.ds-table th.ds-table-header-cell{
+    text-align: center;
+}
+
+
+/*
+tr.ds-table-row.odd:last-child, table#aspect_artifactbrowser_AdvancedSearch_table_search-query.ds-table tr:last-child, table#aspect_administrative_eperson_ManageEPeopleMain_table_eperson-search-table.ds-table tr:last-child{
+    border-bottom: none;
+}
+*/
+
+tr.ds-table-header-row {
+    text-align: left;
+    }
+
+table#aspect_administrative_eperson_ManageEPeopleMain_table_eperson-search-table.ds-table {
+    width: 655px;
+    margin: 20px auto;
+    }
+    
+table#aspect_administrative_group_ManageGroupsMain_list_actions.ds-gloss-list, table#aspect_administrative_group_ManageGroupsMain_table_groups-search-table.ds-table {
+    width: 615px;
+    margin: 20px;
+    }   
+    
+table#aspect_administrative_eperson_ManageEPeopleMain_table_eperson-search-table.ds-table tbody{    
+    text-align: left;
+    /*border: 1px #d0d0d0 solid;*/
+    background: #fff;
+    }
+
+/* Selects homepage h1 */
+#file_news_div_news~h1 {
+    background-image: none;
     background-color: transparent;
     border: none;
-    /*Css props below are required for IE*/
-    font-size: 0;
-    display:block;
-    line-height: 0;
+    border-radius: 0;
+    padding: 30px 10px 20px 30px;
+    top: 0; 
 }
 
-table.discovery-filters input.filter-control.filter-remove{
-    margin-left: 7px;
-    background-image: url('../../images/button_minus.png');
+#aspect_artifactbrowser_StatisticsViewer_div_statistics h2 {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
 }
 
-table.discovery-filters input.filter-control.filter-add{
-    background-image: url('../../images/button_plus.png');
+ul#aspect_administrative_ControlPanel_list_options.ds-simple-list.clearfix.horizontal li{
+    color: #cc0000;
+    border: 1px solid #d0d0d0;
+    border-bottom: none;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px 5px;
 }
 
-table.discovery-filters tr.search-filter.filler
-{
-    background-color: #FAFAFA;
-    height: 25px;
+table#aspect_administrative_eperson_ManageEPeopleMain_list_actions.ds-gloss-list, table#aspect_administrative_eperson_ManageEPeopleMain_table_eperson-search-table.ds-table {
+    width: 615px;
+    margin: 20px;
 }
 
-table.discovery-filters th.new-filter-header
-{
-    padding-top: 5px;
+table#aspect_administrative_ControlPanel_list_javaOs.ds-gloss-list, table#aspect_administrative_ControlPanel_list_runtime.ds-gloss-list, table#aspect_administrative_ControlPanel_list_dspace.ds-gloss-list, table#aspect_administrative_ControlPanel_list_oai-generator-settings.ds-gloss-list, table#aspect_administrative_ControlPanel_list_oai-harvester-settings.ds-gloss-list, table#aspect_administrative_ControlPanel_table_users.ds-table {
+    width: 615px;
+    margin: 20px;
+    }
+    
+table#aspect_administrative_registries_FormatRegistryMain_table_bitstream-format-registry.ds-table tr{
+    border: none;
+    }
+    
+table#aspect_administrative_registries_FormatRegistryMain_table_bitstream-format-registry.ds-table tr td{
+    border-left: none;
+    border-right: none;
+    }
+    
+form#aspect_eperson_PasswordLogin_div_login.ds-interactive-div.primary h2 {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    }
+    
+table#aspect_submission_Submissions_table_unfinished-submissions.ds-table tbody tr td, table#aspect_administrative_registries_MetadataRegistryMain_table_metadata-registry-main-table.ds-table tr td {
+    border: none;
+    }
+    
+table#aspect_submission_Submissions_table_unfinished-submissions.ds-table {
+    border-left: none
+    border-right: none;
+    }
+    
+#aspect_submission_Submissions_table_unfinished-submissions tr,
+#aspect_submission_Submissions_table_submissions-inprogress tr {
+    line-height: 1.6em;
+    }   
+    
+fieldset#aspect_submission_StepTransformer_list_submit-initial-questions.ds-form-list ol {
+    margin-left: 30px;
+    }
+    
+fieldset#aspect_submission_StepTransformer_list_submit-initial-questions.ds-form-list ol li {
+    margin: 20px 0 15px;    
+    }
+    
+fieldset#aspect_submission_StepTransformer_list_submit-initial-questions.ds-form-list ol li label.ds-form-label {
+    text-transform: capitalize;
+    }
+
+fieldset#aspect_submission_StepTransformer_list_submit-review.ds-form-list h2 {
+    margin-bottom: 20px;
+    }   
+    
+form#aspect_administrative_authorization_AuthorizationMain_div_authorization-main.ds-interactive-div.primary.administrative.authorization h2 {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
 }
 
+table#aspect_administrative_authorization_AuthorizationMain_list_actions.ds-gloss-list, div#aspect_administrative_authorization_AuthorizationMain_div_authorization-containerList.ds-static-div {
+    width: 615px;
+    margin: 10px auto 10px;
+    }
+    
+div#aspect_administrative_authorization_AuthorizationMain_div_authorization-containerList.ds-static-div p {
+    
+    }   
+    
+    
+div#aspect_administrative_authorization_AuthorizationMain_div_authorization-containerList.ds-static-div ul {
+    margin-left: 0;
+    }
+    
+ul#aspect_administrative_authorization_AuthorizationMain_list_containerList.ds-simple-list li{
+    list-style-type: none;
+    }
+    
+ul#aspect_administrative_authorization_AuthorizationMain_list_containerList.ds-simple-list li ul li{
+    list-style-type: disc;
+    margin-left: 20px;
+    }
 
-.searchTime{
-    color: #999999;
-}
-
-.didYouMean{
-    font-size: 18px;
-}
-
-.didYouMean a{
+ul#aspect_administrative_authorization_AuthorizationMain_list_containerList.ds-simple-list li span.bold a{
+    font-size: 1.2em;
     font-weight: bold;
+    line-height: 1.2em;
+    margin: 20px 0 5px 0;
+    display: block;
+    font-size: 110%;
+    color: #000;
+    }
+    
+ul#aspect_administrative_authorization_AuthorizationMain_list_containerList.ds-simple-list li span.bold a:hover{
+    color: #cc0000; 
+    }
+    
+form#aspect_administrative_registries_MetadataRegistryMain_div_metadata-registry-main.ds-interactive-div.primary.administrative.metadata-registry h2{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    }
+    
+div#aspect_administrative_registries_MetadataRegistryMain_div_add-schema.ds-static-div{ 
+        width: 615px;
+        margin: 10px auto 10px;
+        }
+        
+ul#aspect_administrative_WithdrawnItems_list_jump-list.ds-simple-list.alphabet a{
+    width: 20px;
+    }   
+    
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser.ds-static-div.primary ul li a{
+    /*color: #000;*/
 }
 
-.recentSubmissionViewMore {
-    text-align: right;
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser.ds-static-div.primary ul li a:hover{
+    color: #cc0000;
+}
+
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser.ds-static-div.primary ul li{
+    list-style-type: none;
+    margin: 15px 0 5px 0;
+}
+
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser.ds-static-div.primary ul li ul li{
+    list-style-type: disc;
     font-size: 100%;
+    margin: 5px 0 5px 0;
 }
 
-.hidden {
-  display: none;
-  visibility: hidden;
-} 
-
-.hide {
-  display: none;
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser.ds-static-div.primary ul li ul li a{
+    color: #555;
+    font-size: 80%;
 }
+
+form#aspect_artifactbrowser_FrontPageSearch_div_front-page-search.ds-interactive-div.primary p {
+    margin-left: 20px;
+}
+
+div#uhl-front-content.ds-static-div {
+    line-height: 1.6em;
+    position: absolute;
+    width: 675px;
+    padding: 15px 20px 5px 20px;
+    top: 60px;
+    left: 1px;
+    color: #fff;
+    background: url('../../images/70percentblack.png') repeat;
+    }
+
+
+    
+        
