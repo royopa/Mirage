@@ -320,6 +320,17 @@
     <xsl:template name="buildHeader">
         <div id="ds-header-wrapper">
             <div id="ds-header" class="clearfix">
+                <a href="http://info.lib.uh.edu/">
+                    <img>
+                         <xsl:attribute name="src">
+                            <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                            <xsl:text>/themes/</xsl:text>
+                            <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+                            <xsl:text>/images/UHL-logo.png</xsl:text>
+                         </xsl:attribute>
+                    </img>
+                </a>
+                <!--               
                 <a id="ds-header-logo-link">
                     <xsl:attribute name="href">
                         <xsl:value-of
@@ -331,6 +342,7 @@
                        <i18n:text>xmlui.dri2xhtml.structural.head-subtitle</i18n:text>
                     </span>
                 </a>
+                -->
                 <h1 class="pagetitle visuallyhidden">
                     <xsl:choose>
                         <!-- protection against an empty page title -->
@@ -390,6 +402,18 @@
                 <xsl:call-template name="languageSelection" />
                 
             </div>
+        </div>
+        <div id="uhl-header">
+            <a href="https://repositories.tdl.org/uh-ir">
+                <img>
+                    <xsl:attribute name="src">
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                        <xsl:text>/themes/</xsl:text>
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+                        <xsl:text>/images/uhir-logo.png</xsl:text>
+                    </xsl:attribute>
+                </img>                
+            </a>
         </div>
     </xsl:template>
 
@@ -565,6 +589,59 @@
     <xsl:template name="buildFooter">
         <div id="ds-footer-wrapper">
             <div id="ds-footer">
+                <div id="content">
+                <div id="links">
+                <div id="social">
+                <a href="http://www.twitter.com/uhoustonlib">
+                <div title="Twitter" id="twitter"><xsl:text> </xsl:text></div>
+                </a>
+                <a href="https://www.facebook.com/uhlibraries">
+                <div title="Facebook" id="facebook"><xsl:text> </xsl:text></div>
+                </a>
+                <a href="http://www.youtube.com/user/uhlibraries">
+                <div title="YouTube" id="youtube"><xsl:text> </xsl:text></div>
+                </a>
+                </div>
+                <div id="uhds-links">
+                <ul>
+                <li class="first">
+                <a href="https://repositories.tdl.org/uh-ir/contact">Contact Us</a>
+                </li>
+                <li xmlns:i18n="http://apache.org/cocoon/i18n/2.1">
+                <a href="https://repositories.tdl.org/uh-ir/feedback">Send Feedback</a>
+                </li>
+                </ul>
+                </div>
+                <div xmlns:i18n="http://apache.org/cocoon/i18n/2.1" id="uh-links">
+                <ul>
+                <li class="first">
+                <a href="http://www.uh.edu/">UH Home</a>
+                </li>
+                <li>
+                <a href="http://www.uhsa.uh.edu/">UH System</a>
+                </li>
+                <li>
+                <a href="http://www.texas.gov/">State of Texas</a>
+                </li>
+                <li>
+                <a href="http://www.piersystem.com/go/site/1093/">Emergency Site</a>
+                </li>
+                </ul>
+                </div>
+                <div id="uhl-address">University of Houston, 114 University Libraries, Houston TX 77204-2000, (713) 743-1050. 
+                                            © 2013 University of Houston. All rights reserved. </div>
+                </div>
+                <div id="uhl-logo">
+                    <img>
+                         <xsl:attribute name="src">
+                            <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                            <xsl:text>/themes/</xsl:text>
+                            <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+                            <xsl:text>/images/UHL-stacked.png</xsl:text>
+                         </xsl:attribute>
+                    </img>
+                </div>
+                <!--
                 <div id="ds-footer-left">
                     <a href="http://www.dspace.org/" target="_blank">DSpace software</a> copyright&#160;&#169;&#160;2002-2012&#160; <a href="http://www.duraspace.org/" target="_blank">Duraspace</a>
                 </div>
@@ -593,6 +670,7 @@
                         <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
                     </a>
                 </div>
+            -->
                 <!--Invisible link to HTML sitemap (for search engines) -->
                 <a class="hidden">
                     <xsl:attribute name="href">
@@ -603,6 +681,7 @@
                     <xsl:text>&#160;</xsl:text>
                 </a>
             </div>
+        </div>
         </div>
     </xsl:template>
 
