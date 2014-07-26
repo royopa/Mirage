@@ -7,3 +7,14 @@ Folder
 --
 
 ###[dspace]/xmlui/webapp/themes
+
+
+based on 
+---
+
+https://repositories.tdl.org/uh-ir
+
+Links
+---
+
+https://wiki.duraspace.org/display/DSDOC18/Mirage+Configuration+and+Customization
