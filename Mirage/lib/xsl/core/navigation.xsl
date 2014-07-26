@@ -45,10 +45,12 @@
         <div id="ds-options-wrapper">
             <div id="ds-options">
                 <xsl:if test="not(contains(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='URI'], 'discover'))">
-                    <h1 id="ds-search-option-head" class="ds-option-set-head">
-                        <i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>
-                    </h1>
-                    <div id="ds-search-option" class="ds-option-set">
+                    <div class="ds-option-set-head nav-head" id="ds-search-option-head">
+                        <div class="internal-titlebar">
+                            <i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>
+                        </div>
+                    </div>
+                    <div class="ds-option-set nav-container" id="ds-search-option">
                         <!-- The form, complete with a text box and a button, all built from attributes referenced
                      from under pageMeta. -->
                         <form id="ds-search-form" method="post">
@@ -128,20 +130,27 @@
 
                 </xsl:if>
                 <!-- Once the search box is built, the other parts of the options are added -->
-                <xsl:apply-templates/>
+                <!-- <xsl:apply-templates/>-->
+                <xsl:apply-templates select="dri:list[@n='discovery']"/>
+                <xsl:apply-templates select="dri:list[@n='context']"/>
+                <xsl:apply-templates select="dri:list[@n='account']"/>
+                <xsl:apply-templates select="dri:list[@n='administrative']"/>
+                <xsl:apply-templates select="dri:list[@n='statistics']"/>
+                <xsl:apply-templates select="dri:list[@n='browse']"/>
 
                 <!-- DS-984 Add RSS Links to Options Box -->
                 <xsl:if test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='feed']) != 0">
-                    <h1 id="ds-feed-option-head" class="ds-option-set-head">
-                        <i18n:text>xmlui.feed.header</i18n:text>
-                    </h1>
-                    <div id="ds-feed-option" class="ds-option-set">
-                        <ul>
+                    <div class="nav-head" id="ds-feed-option-head">
+                        <div class="internal-titlebar">
+                            <i18n:text>xmlui.feed.header</i18n:text>
+                        </div>
+                    </div>
+                    <div id="ds-feed-option" class="ds-option-set nav-container">
+                        <ul class="ds-simple-list">
                             <xsl:call-template name="addRSSLinks"/>
                         </ul>
                     </div>
                 </xsl:if>
-
 
             </div>
         </div>
@@ -155,22 +164,21 @@
                     <xsl:attribute name="href">
                         <xsl:value-of select="."/>
                     </xsl:attribute>
-
-                    <xsl:attribute name="style">
-                        <xsl:text>background: url(</xsl:text>
-                        <xsl:value-of select="$context-path"/>
-                        <xsl:text>/static/icons/feed.png) no-repeat</xsl:text>
-                    </xsl:attribute>
-
+                    <image>
+                        <xsl:attribute name="src">
+                            <xsl:value-of select="$context-path"/>
+                            <xsl:text>/static/icons/feed.png</xsl:text>
+                        </xsl:attribute>
+                    </image>
                     <xsl:choose>
                         <xsl:when test="contains(., 'rss_1.0')">
-                            <xsl:text>RSS 1.0</xsl:text>
+                            <xsl:text> RSS 1.0</xsl:text>
                         </xsl:when>
                         <xsl:when test="contains(., 'rss_2.0')">
-                            <xsl:text>RSS 2.0</xsl:text>
+                            <xsl:text> RSS 2.0</xsl:text>
                         </xsl:when>
                         <xsl:when test="contains(., 'atom_1.0')">
-                            <xsl:text>Atom</xsl:text>
+                            <xsl:text> Atom</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="@qualifier"/>

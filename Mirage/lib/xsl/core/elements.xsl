@@ -46,7 +46,6 @@
         </xsl:element>
     </xsl:template>
 
-
     <xsl:template match="dri:div/dri:head" priority="3">
         <xsl:call-template name="renderHead">
             <xsl:with-param name="class">ds-div-head</xsl:with-param>
@@ -81,8 +80,9 @@
     </xsl:template>
 
     <xsl:template match="dri:options/dri:list/dri:head" priority="3">
-        <xsl:call-template name="renderHead">
-            <xsl:with-param name="class">ds-option-set-head</xsl:with-param>
+        <xsl:call-template name="renderHeadNav">
+            <xsl:with-param name="class">nav-head</xsl:with-param>
+            <xsl:with-param name="classTitle">internal-titlebar</xsl:with-param>
         </xsl:call-template>
     </xsl:template>
 
@@ -90,6 +90,17 @@
         <xsl:call-template name="renderHead">
             <xsl:with-param name="class">ds-head</xsl:with-param>
         </xsl:call-template>
+    </xsl:template>
+
+    <xsl:template name="renderHeadNav">
+        <xsl:param name="class"/>
+        <xsl:param name="classTitle"/>
+        <xsl:element name="div">
+            <xsl:call-template name="standardAttributes">
+                <xsl:with-param name="class" select="$class"/>
+            </xsl:call-template>
+        <xsl:apply-templates />
+        </xsl:element>
     </xsl:template>
 
 </xsl:stylesheet>

@@ -87,14 +87,16 @@
     <!--the tabs are floating, so give the ul the class 'clearfix' to ensure it has a height-->
     <xsl:template match="dri:div[contains(@rend, 'administrative')]/dri:list[@rend = 'horizontal']">
         <xsl:apply-templates select="dri:head"/>
-        <ul>
-            <xsl:call-template name="standardAttributes">
-                <xsl:with-param name="class">ds-simple-list clearfix</xsl:with-param>
-            </xsl:call-template>
-            <xsl:apply-templates select="*[not(name()='head')]" mode="nested"/>
-        </ul>
+        <div class="ds-option-set nav-container">
+            <ul class="ds-options-list">
+                <xsl:call-template name="standardAttributes">
+                    <xsl:with-param name="class">ds-simple-list clearfix</xsl:with-param>
+                </xsl:call-template>
+                <xsl:apply-templates select="*[not(name()='head')]" mode="nested"/>
+            </ul>
+        </div>
     </xsl:template>
-
+    
     <!--give the active tab the class 'active-tab'-->
     <xsl:template match="dri:div[contains(@rend, 'administrative')]/dri:list[@rend = 'horizontal']/dri:item[dri:hi[@rend = 'bold']]" mode="nested">
         <li class="active-tab">
