@@ -87,7 +87,7 @@
     <!--the tabs are floating, so give the ul the class 'clearfix' to ensure it has a height-->
     <xsl:template match="dri:div[contains(@rend, 'administrative')]/dri:list[@rend = 'horizontal']">
         <xsl:apply-templates select="dri:head"/>
-        <div class="ds-option-set nav-container">
+        <div class="ds-option-set">
             <ul class="ds-options-list">
                 <xsl:call-template name="standardAttributes">
                     <xsl:with-param name="class">ds-simple-list clearfix</xsl:with-param>

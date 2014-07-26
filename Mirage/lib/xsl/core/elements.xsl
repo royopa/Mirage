@@ -80,9 +80,8 @@
     </xsl:template>
 
     <xsl:template match="dri:options/dri:list/dri:head" priority="3">
-        <xsl:call-template name="renderHeadNav">
-            <xsl:with-param name="class">nav-head</xsl:with-param>
-            <xsl:with-param name="classTitle">internal-titlebar</xsl:with-param>
+        <xsl:call-template name="renderHead">
+            <xsl:with-param name="class">ds-option-set-head</xsl:with-param>
         </xsl:call-template>
     </xsl:template>
 

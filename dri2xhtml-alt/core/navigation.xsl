@@ -173,10 +173,20 @@
         </h3>
     </xsl:template>
 
+    <xsl:template match="dri:options/dri:list/dri:head" priority="1">
+        <h1>
+            <xsl:call-template name="standardAttributes">
+                <xsl:with-param name="class">ds-option-set-head nav-head</xsl:with-param>
+            </xsl:call-template>
+            <xsl:apply-templates />
+        </h1>
+    </xsl:template>
+
     <!-- Items inside option lists are excluded from the "orphan roundup" mechanism -->
     <xsl:template match="dri:options//dri:item" mode="nested" priority="3">
         <li>
             <xsl:apply-templates />
         </li>
     </xsl:template>
+
 </xsl:stylesheet>

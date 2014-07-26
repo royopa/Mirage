@@ -45,11 +45,9 @@
         <div id="ds-options-wrapper">
             <div id="ds-options">
                 <xsl:if test="not(contains(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='URI'], 'discover'))">
-                    <div class="ds-option-set-head nav-head" id="ds-search-option-head">
-                        <div class="internal-titlebar">
-                            <i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>
-                        </div>
-                    </div>
+                    <h1 class="ds-option-set-head" id="ds-search-option-head">
+                        <i18n:text>xmlui.dri2xhtml.structural.search</i18n:text>
+                    </h1>
                     <div class="ds-option-set nav-container" id="ds-search-option">
                         <!-- The form, complete with a text box and a button, all built from attributes referenced
                      from under pageMeta. -->
@@ -130,21 +128,21 @@
 
                 </xsl:if>
                 <!-- Once the search box is built, the other parts of the options are added -->
-                <!-- <xsl:apply-templates/>-->
+                <xsl:apply-templates/>
+                <!--
+                <xsl:apply-templates select="dri:list[@n='browse']"/>
+                <xsl:apply-templates select="dri:list[@n='account']"/>
                 <xsl:apply-templates select="dri:list[@n='discovery']"/>
                 <xsl:apply-templates select="dri:list[@n='context']"/>
-                <xsl:apply-templates select="dri:list[@n='account']"/>
                 <xsl:apply-templates select="dri:list[@n='administrative']"/>
                 <xsl:apply-templates select="dri:list[@n='statistics']"/>
-                <xsl:apply-templates select="dri:list[@n='browse']"/>
+                -->
 
                 <!-- DS-984 Add RSS Links to Options Box -->
                 <xsl:if test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='feed']) != 0">
-                    <div class="nav-head" id="ds-feed-option-head">
-                        <div class="internal-titlebar">
-                            <i18n:text>xmlui.feed.header</i18n:text>
-                        </div>
-                    </div>
+                    <h1 class="ds-option-set-head" id="ds-feed-option-head">
+                        <i18n:text>xmlui.feed.header</i18n:text>
+                    </h1>
                     <div id="ds-feed-option" class="ds-option-set nav-container">
                         <ul class="ds-simple-list">
                             <xsl:call-template name="addRSSLinks"/>
@@ -189,6 +187,21 @@
         </xsl:for-each>
     </xsl:template>
 
+   <!-- The template that applies to lists directly under the options tag that have other lists underneath
+        them. Each list underneath the matched one becomes an option-set and is handled by the appropriate
+        list templates. -->
+    <xsl:template match="dri:options/dri:list[dri:list]" priority="4">
+        <xsl:apply-templates select="dri:head"/>
+        <div>
+            <xsl:call-template name="standardAttributes">
+                <xsl:with-param name="class">ds-option-set nav-container</xsl:with-param>
+            </xsl:call-template>
+            <ul class="ds-options-list">
+                <xsl:apply-templates select="*[not(name()='head')]" mode="nested"/>
+            </ul>
+        </div>
+    </xsl:template>
+
     <!--give nested navigation list the class sublist-->
     <xsl:template match="dri:options/dri:list/dri:list" priority="3" mode="nested">
         <li>
@@ -199,10 +212,29 @@
         </li>
     </xsl:template>
 
+    <xsl:template match="dri:options/dri:list" priority="3">
+        <xsl:apply-templates select="dri:head"/>
+        <div>
+            <xsl:call-template name="standardAttributes">
+                <xsl:with-param name="class">ds-option-set nav-container</xsl:with-param>
+            </xsl:call-template>
+            <ul class="ds-simple-list">
+                <xsl:apply-templates select="dri:item" mode="nested"/>
+            </ul>
+        </div>
+    </xsl:template>
+
     <!-- Quick patch to remove empty lists from options -->
     <xsl:template match="dri:options//dri:list[count(child::*)=0]" priority="5" mode="nested">
     </xsl:template>
     <xsl:template match="dri:options//dri:list[count(child::*)=0]" priority="5">
+    </xsl:template>
+
+    <!-- Items inside option lists are excluded from the "orphan roundup" mechanism -->
+    <xsl:template match="dri:options//dri:item" mode="nested" priority="3">
+        <li>
+            <xsl:apply-templates />
+        </li>
     </xsl:template>
 
 </xsl:stylesheet>
